@@ -1,0 +1,114 @@
+========== HEADER & NAV ==========
+.nav__logo
+CodeBox
+
+.nav__link
+Home
+
+Discover 
+
+Resources
+
+Pricing
+
+Company
+
+.dropdown__title - .dropdown__link
+/* DROPDOWN 1 */
+Most viewed courses
+
+HTML for beginners
+Advanced CSS
+JavaScript OOP
+
+
+Popular courses
+
+Development with Flutter
+Web development with React
+Backend development expert
+
+
+Careers
+
+Web development
+Applications development
+UI/UX design
+Informatic security
+
+
+Certifications
+
+Course certificates
+Free certifications
+
+
+/* DROPDOWN 2 */
+Web templates
+
+Free templates
+Premium templates
+
+
+Designs
+
+Web designs
+App designs
+Component design
+
+
+Others
+
+Recent blogs
+Tutorial videos
+Webinar
+
+
+/* DROPDOWN 3 */
+About us
+
+About us
+Support
+Contact us
+
+
+Safety and quality
+
+Cookie settings
+Privacy Policy
+
+
+========== SHOW MENU ==========
+// Add show-menu class to nav menu
+
+// Add show-icon to show and hide the menu icon
+
+
+========== SHOW DROPDOWN MENU ==========
+// 1. Select each dropdown item
+
+// 2. Select each button click
+
+// 3. Create a function to display the dropdown
+
+	// 3.1. Select each dropdown content
+
+// 4. Add the maximum height to the dropdown content and add the show-dropdown class
+
+// 5. Call the toggleItem function
+
+// 6. If the same item contains the show-dropdown class, remove
+
+// 7. Select the current show-dropdown class
+
+// 8. Remove the show-dropdown class from other items
+
+
+========== DELETE DROPDOWN STYLES ==========
+// Function to remove dropdown styles in mobile mode when browser resizes
+
+// Validate if the media query reaches 1118px
+
+// Remove the dropdown container height style
+
+// Remove the show-dropdown class from dropdown item
