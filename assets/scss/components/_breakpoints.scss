@@ -1,0 +1,120 @@
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+@media screen and (max-width: 300px){
+    .dropdown__group{
+        padding-left: 1.5rem;
+    }
+}
+
+/* For large devices */
+@media screen and (min-width: 1118px){
+    /* Nav */
+    .nav{
+        height: calc(var(--header-height) + 2rem);
+        display: flex;
+        justify-content: space-between;
+
+        &__toggle{
+            display: none;
+        }
+        &__list{
+            display: flex;
+            column-gap: 3rem;
+            height: 100%;
+        }
+        & li{
+            display: flex;
+        }
+        &__link{
+            padding: 0;
+
+            &:hover{
+                background-color: initial;
+            }
+        }
+    }
+
+    /* Dropdown */
+    .dropdown{
+        &__button{
+            column-gap: .25rem;
+            pointer-events: none;
+        }
+        &__container{
+            height: max-content;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 6.5rem;
+            background-color: var(--body-color);
+            box-shadow: 0 6px 8px hsla(220, 68%, 12%, .05);
+            pointer-events: none;
+            opacity: 0;
+            transition: top .4s, opacity .3s;
+        }  
+        &__content{
+            grid-template-columns: repeat(4, max-content);
+            column-gap: 6rem;
+            max-width: 1120px;
+            margin-inline: auto;
+        }
+
+        &__group{
+            &:first-child,
+            &:last-child{
+                margin: 0;
+            }
+            padding: 4rem 0;
+            align-content: baseline;
+            row-gap: 1.25rem;
+        }
+        &__list{
+            row-gap: .75rem;
+        }
+        &__icon{
+            width: 60px;
+            height: 60px;
+            background-color: var(--first-color-lighten);
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            margin-bottom: 1rem;
+
+            & i{
+                font-size: 2rem;
+            }
+        }
+        &__title{
+            font-size: var(--normal-font-size);
+        }
+        &__link{
+            font-size: var(--small-font-size);
+
+            &:hover{
+                color: var(--first-color);
+            }
+        }
+
+        &__item{
+            cursor: pointer;
+
+            // Rotate dropdown icon
+            &:hover .dropdown__arrow{
+                transform: rotate(180deg);
+            }
+            // Show dropdown menu
+            &:hover > .dropdown__container{
+                top: 5.5rem;
+                opacity: 1;
+                pointer-events: initial;
+                cursor: initial;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1152px){
+    .container{
+        margin-inline: auto;
+    }
+}

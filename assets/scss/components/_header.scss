@@ -1,0 +1,174 @@
+/*=============== HEADER ===============*/
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 2px 8px hsla(220, 68%, 12%, .1);
+    background-color: var(--body-color);
+    z-index: var(--z-fixed);
+}
+
+/*=============== NAV ===============*/
+.nav{
+    height: var(--header-height);
+
+    &__data{
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__logo{
+        display: inline-flex;
+        align-items: center;
+        column-gap: .25rem;
+        color: var(--title-color);
+        font-weight: var(--font-semi-bold);
+        transition: color .3s;
+
+        & i{
+            font-size: 1.25rem;
+        }
+        &:hover{
+            color: var(--first-color);
+        }
+    }
+    &__toggle{
+        position: relative;
+        width: 32px;
+        height: 32px;
+        
+        &-menu,
+        &-close{
+            font-size: 1.25rem;
+            color: var(--title-color);
+            position: absolute;
+            display: grid;
+            place-items: center;
+            inset: 0;
+            cursor: pointer;
+            transition: opacity .1s, transform .4s;
+        }
+        &-close{
+            opacity: 0;
+        }
+    }
+    @media screen and (max-width: 1118px){
+        &__menu{
+            background-color: var(--body-color);
+            position: absolute;
+            left: 0;
+            top: 2.5rem;
+            width: 100%;
+            height: calc(100vh - 3.5rem);
+            overflow: auto;
+            padding-block: 1.5rem 4rem;
+            pointer-events: none;
+            opacity: 0;
+            transition: top .4s, opacity .3s;
+    
+            &::-webkit-scrollbar{
+                width: .5rem;
+            }
+            &::-webkit-scrollbar-thumb{
+                background-color: hsl(220, 12%, 70%);
+            }
+        }
+    }
+    &__link{
+        color: var(--title-color);
+        font-weight: var(--font-semi-bold);
+        padding: 1.25rem 1.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: background-color .3s;
+
+        &:hover{
+            background-color: var(--first-color-lighten);
+        }
+    }
+}
+
+/* Show menu */
+.show-menu{
+    opacity: 1;
+    top: 3.5rem;
+    pointer-events: initial;
+}
+
+/* Show icon */
+.show-icon .nav__toggle-menu{
+    opacity: 0;
+    transform: rotate(90deg);
+}
+
+.show-icon .nav__toggle-close{
+    opacity: 1;
+    transform: rotate(90deg);
+}
+
+/*=============== DROPDOWN ===============*/
+.dropdown{
+    &__button{
+        cursor: pointer;
+    }
+    &__arrow{
+        font-size: 1.5rem;
+        font-weight: initial;
+        transition: transform .4s;
+    }
+    &__content,
+    &__group,
+    &__list{
+        display: grid;
+    }
+    &__container{
+        background-color: var(--first-color-lighten);
+        height: 0;
+        overflow: hidden;
+        transition: height .4s;
+    }
+    &__content{
+        row-gap: 1.75rem;
+    }
+    &__group{
+        padding-left: 2.5rem;
+        row-gap: .5rem;
+
+        &:first-child{
+            margin-top: 1.25rem;
+        }
+        &:last-child{
+            margin-bottom: 1.25rem;
+        }
+    }
+    &__icon i{
+        font-size: 1.25rem;
+        color: var(--first-color);
+    }
+    &__title{
+        font-size: var(--small-font-size);
+        font-weight: var(--font-semi-bold);
+        color: var(--title-color);
+    }
+    &__list{
+        row-gap: .25rem;
+    }
+    &__link{
+        font-size: var(--smaller-font-size);
+        font-weight: var(--font-medium);
+        color: var(--text-color);
+        transition: color .3s;
+
+        &:hover{
+            color: var(--title-color);
+        }
+    }
+}
+
+/* Rotate dropdown icon */
+.show-dropdown .dropdown__arrow{
+    transform: rotate(180deg);
+}
